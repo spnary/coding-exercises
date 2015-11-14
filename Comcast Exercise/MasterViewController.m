@@ -8,10 +8,18 @@
 
 #import "MasterViewController.h"
 #import "DetailViewController.h"
+#import "SNJSONParser.h"
+#import "SNVideoGalleryFactory.h"
+#import "SNVideoEntityFactory.h"
+#import "SNVideoGallery.h"
+#import "SNVideoEntity.h"
+#import "SNConstants.h"
 
 @interface MasterViewController ()
 
 @property NSMutableArray *objects;
+@property (strong, nonatomic) SNJSONParser *parser;
+@property (strong, nonatomic) NSArray<SNVideoGallery*> *videoGalleries;
 @end
 
 @implementation MasterViewController
@@ -19,11 +27,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    self.navigationItem.leftBarButtonItem = self.editButtonItem;
 
-    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
-    self.navigationItem.rightBarButtonItem = addButton;
     self.detailViewController = (DetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
+    
+    if (self.parser == nil) {
+        NSLog(@"Setting up parser");
+        self.parser = [[SNJSONParser alloc]init];
+        self.parser.delegate = self;
+     
+        [self.parser getJSONDataFromURL:[NSURL URLWithString:ComcastURLString]];
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -36,14 +49,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)insertNewObject:(id)sender {
-    if (!self.objects) {
-        self.objects = [[NSMutableArray alloc] init];
-    }
-    [self.objects insertObject:[NSDate date] atIndex:0];
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
-    [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-}
 
 #pragma mark - Segues
 
@@ -61,33 +66,43 @@
 #pragma mark - Table View
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
+    return self.videoGalleries.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.objects.count;
+    return self.videoGalleries[section].videos.count;
+  
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
 
-    NSDate *object = self.objects[indexPath.row];
-    cell.textLabel.text = [object description];
+    SNVideoEntity *video = self.videoGalleries[indexPath.section].videos[indexPath.row];
+    cell.textLabel.text = video.entityName;
     return cell;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    return self.videoGalleries[section].name;
 }
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
     // Return NO if you do not want the specified item to be editable.
-    return YES;
+    return NO;
 }
 
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        [self.objects removeObjectAtIndex:indexPath.row];
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
+#pragma mark = SNJSONParser Delegate Methods
+
+- (void)didReceiveVideoGalleries:(NSArray *)galleriesArray {
+    NSDictionary *galleryDictionary;
+    NSMutableArray<SNVideoGallery*> *tempVideos = [NSMutableArray arrayWithCapacity:50];
+    for (galleryDictionary in galleriesArray) {
+        SNVideoGallery *gallery = [SNVideoGalleryFactory videoGalleryFromDictionary:galleryDictionary];
+        [tempVideos addObject:gallery];
     }
+    self.videoGalleries = tempVideos;
+    
+    [self.tableView reloadData];
 }
 
 @end

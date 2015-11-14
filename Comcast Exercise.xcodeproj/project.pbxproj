@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BA1ECE201BF4182200585022 /* SNVideoEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = BA1ECE1F1BF4182200585022 /* SNVideoEntity.m */; };
+		BA1ECE231BF41B3A00585022 /* SNVideoEntityFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = BA1ECE221BF41B3A00585022 /* SNVideoEntityFactory.m */; };
+		BA1ECE251BF41C6700585022 /* SNVideoEntityFactoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BA1ECE241BF41C6700585022 /* SNVideoEntityFactoryTests.m */; };
+		BA6EA4FA1BF5114700FD0668 /* SNConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = BA6EA4F91BF5114700FD0668 /* SNConstants.m */; };
+		BA6EA4FD1BF5673900FD0668 /* SNVideoGallery.m in Sources */ = {isa = PBXBuildFile; fileRef = BA6EA4FC1BF5673900FD0668 /* SNVideoGallery.m */; };
+		BA6EA5001BF568A900FD0668 /* SNVideoGalleryFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = BA6EA4FF1BF568A900FD0668 /* SNVideoGalleryFactory.m */; };
 		BA85DB581BF3B95F0089A1CC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BA85DB571BF3B95F0089A1CC /* main.m */; };
 		BA85DB5B1BF3B95F0089A1CC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BA85DB5A1BF3B95F0089A1CC /* AppDelegate.m */; };
 		BA85DB5E1BF3B95F0089A1CC /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA85DB5D1BF3B95F0089A1CC /* MasterViewController.m */; };
@@ -15,6 +21,9 @@
 		BA85DB661BF3B95F0089A1CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA85DB651BF3B95F0089A1CC /* Assets.xcassets */; };
 		BA85DB691BF3B95F0089A1CC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA85DB671BF3B95F0089A1CC /* LaunchScreen.storyboard */; };
 		BA85DB741BF3B95F0089A1CC /* Comcast_ExerciseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BA85DB731BF3B95F0089A1CC /* Comcast_ExerciseTests.m */; };
+		BA85DB801BF3B9B30089A1CC /* ComcastTestData.json in Resources */ = {isa = PBXBuildFile; fileRef = BA85DB7F1BF3B9B30089A1CC /* ComcastTestData.json */; };
+		BA85DB831BF3BA0A0089A1CC /* SNJSONParser.m in Sources */ = {isa = PBXBuildFile; fileRef = BA85DB821BF3BA0A0089A1CC /* SNJSONParser.m */; };
+		BA85DB851BF3C0710089A1CC /* ComcastTestData_pretty.json in Resources */ = {isa = PBXBuildFile; fileRef = BA85DB841BF3C0710089A1CC /* ComcastTestData_pretty.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,6 +37,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BA1ECE1E1BF4182200585022 /* SNVideoEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNVideoEntity.h; sourceTree = "<group>"; };
+		BA1ECE1F1BF4182200585022 /* SNVideoEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNVideoEntity.m; sourceTree = "<group>"; };
+		BA1ECE211BF41B3A00585022 /* SNVideoEntityFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNVideoEntityFactory.h; sourceTree = "<group>"; };
+		BA1ECE221BF41B3A00585022 /* SNVideoEntityFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNVideoEntityFactory.m; sourceTree = "<group>"; };
+		BA1ECE241BF41C6700585022 /* SNVideoEntityFactoryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNVideoEntityFactoryTests.m; sourceTree = "<group>"; };
+		BA6EA4F81BF5112600FD0668 /* SNConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNConstants.h; sourceTree = "<group>"; };
+		BA6EA4F91BF5114700FD0668 /* SNConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNConstants.m; sourceTree = "<group>"; };
+		BA6EA4FB1BF5673900FD0668 /* SNVideoGallery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNVideoGallery.h; sourceTree = "<group>"; };
+		BA6EA4FC1BF5673900FD0668 /* SNVideoGallery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNVideoGallery.m; sourceTree = "<group>"; };
+		BA6EA4FE1BF568A900FD0668 /* SNVideoGalleryFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNVideoGalleryFactory.h; sourceTree = "<group>"; };
+		BA6EA4FF1BF568A900FD0668 /* SNVideoGalleryFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNVideoGalleryFactory.m; sourceTree = "<group>"; };
 		BA85DB531BF3B95F0089A1CC /* Comcast Exercise.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Comcast Exercise.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA85DB571BF3B95F0089A1CC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BA85DB591BF3B95F0089A1CC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -43,6 +63,10 @@
 		BA85DB6F1BF3B95F0089A1CC /* Comcast ExerciseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Comcast ExerciseTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA85DB731BF3B95F0089A1CC /* Comcast_ExerciseTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Comcast_ExerciseTests.m; sourceTree = "<group>"; };
 		BA85DB751BF3B95F0089A1CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BA85DB7F1BF3B9B30089A1CC /* ComcastTestData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ComcastTestData.json; sourceTree = "<group>"; };
+		BA85DB811BF3BA0A0089A1CC /* SNJSONParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNJSONParser.h; sourceTree = "<group>"; };
+		BA85DB821BF3BA0A0089A1CC /* SNJSONParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNJSONParser.m; sourceTree = "<group>"; };
+		BA85DB841BF3C0710089A1CC /* ComcastTestData_pretty.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ComcastTestData_pretty.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +87,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BA1ECE1A1BF4177E00585022 /* Data Model */ = {
+			isa = PBXGroup;
+			children = (
+				BA1ECE1E1BF4182200585022 /* SNVideoEntity.h */,
+				BA1ECE1F1BF4182200585022 /* SNVideoEntity.m */,
+				BA1ECE211BF41B3A00585022 /* SNVideoEntityFactory.h */,
+				BA1ECE221BF41B3A00585022 /* SNVideoEntityFactory.m */,
+				BA6EA4FB1BF5673900FD0668 /* SNVideoGallery.h */,
+				BA6EA4FC1BF5673900FD0668 /* SNVideoGallery.m */,
+				BA6EA4FE1BF568A900FD0668 /* SNVideoGalleryFactory.h */,
+				BA6EA4FF1BF568A900FD0668 /* SNVideoGalleryFactory.m */,
+			);
+			name = "Data Model";
+			sourceTree = "<group>";
+		};
 		BA85DB4A1BF3B95F0089A1CC = {
 			isa = PBXGroup;
 			children = (
@@ -84,12 +123,17 @@
 		BA85DB551BF3B95F0089A1CC /* Comcast Exercise */ = {
 			isa = PBXGroup;
 			children = (
+				BA85DB7E1BF3B9920089A1CC /* Test Data */,
+				BA6EA4F81BF5112600FD0668 /* SNConstants.h */,
+				BA6EA4F91BF5114700FD0668 /* SNConstants.m */,
 				BA85DB591BF3B95F0089A1CC /* AppDelegate.h */,
 				BA85DB5A1BF3B95F0089A1CC /* AppDelegate.m */,
 				BA85DB5C1BF3B95F0089A1CC /* MasterViewController.h */,
 				BA85DB5D1BF3B95F0089A1CC /* MasterViewController.m */,
 				BA85DB5F1BF3B95F0089A1CC /* DetailViewController.h */,
 				BA85DB601BF3B95F0089A1CC /* DetailViewController.m */,
+				BA85DB811BF3BA0A0089A1CC /* SNJSONParser.h */,
+				BA85DB821BF3BA0A0089A1CC /* SNJSONParser.m */,
 				BA85DB621BF3B95F0089A1CC /* Main.storyboard */,
 				BA85DB651BF3B95F0089A1CC /* Assets.xcassets */,
 				BA85DB671BF3B95F0089A1CC /* LaunchScreen.storyboard */,
@@ -112,8 +156,19 @@
 			children = (
 				BA85DB731BF3B95F0089A1CC /* Comcast_ExerciseTests.m */,
 				BA85DB751BF3B95F0089A1CC /* Info.plist */,
+				BA1ECE241BF41C6700585022 /* SNVideoEntityFactoryTests.m */,
 			);
 			path = "Comcast ExerciseTests";
+			sourceTree = "<group>";
+		};
+		BA85DB7E1BF3B9920089A1CC /* Test Data */ = {
+			isa = PBXGroup;
+			children = (
+				BA85DB7F1BF3B9B30089A1CC /* ComcastTestData.json */,
+				BA85DB841BF3C0710089A1CC /* ComcastTestData_pretty.json */,
+				BA1ECE1A1BF4177E00585022 /* Data Model */,
+			);
+			name = "Test Data";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -196,9 +251,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA85DB801BF3B9B30089A1CC /* ComcastTestData.json in Resources */,
 				BA85DB691BF3B95F0089A1CC /* LaunchScreen.storyboard in Resources */,
 				BA85DB661BF3B95F0089A1CC /* Assets.xcassets in Resources */,
 				BA85DB641BF3B95F0089A1CC /* Main.storyboard in Resources */,
+				BA85DB851BF3C0710089A1CC /* ComcastTestData_pretty.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -218,7 +275,13 @@
 			files = (
 				BA85DB5B1BF3B95F0089A1CC /* AppDelegate.m in Sources */,
 				BA85DB5E1BF3B95F0089A1CC /* MasterViewController.m in Sources */,
+				BA85DB831BF3BA0A0089A1CC /* SNJSONParser.m in Sources */,
+				BA6EA4FD1BF5673900FD0668 /* SNVideoGallery.m in Sources */,
+				BA1ECE231BF41B3A00585022 /* SNVideoEntityFactory.m in Sources */,
+				BA1ECE201BF4182200585022 /* SNVideoEntity.m in Sources */,
 				BA85DB581BF3B95F0089A1CC /* main.m in Sources */,
+				BA6EA4FA1BF5114700FD0668 /* SNConstants.m in Sources */,
+				BA6EA5001BF568A900FD0668 /* SNVideoGalleryFactory.m in Sources */,
 				BA85DB611BF3B95F0089A1CC /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -227,6 +290,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA1ECE251BF41C6700585022 /* SNVideoEntityFactoryTests.m in Sources */,
 				BA85DB741BF3B95F0089A1CC /* Comcast_ExerciseTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -408,6 +472,7 @@
 				BA85DB7A1BF3B95F0089A1CC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BA85DB7B1BF3B95F0089A1CC /* Build configuration list for PBXNativeTarget "Comcast ExerciseTests" */ = {
 			isa = XCConfigurationList;
@@ -416,6 +481,7 @@
 				BA85DB7D1BF3B95F0089A1CC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

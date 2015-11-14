@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "DetailViewController.h"
+#import "SNJSONParser.h"
 
 @interface AppDelegate () <UISplitViewControllerDelegate>
 
@@ -23,6 +24,7 @@
     navigationController.topViewController.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem;
     splitViewController.delegate = self;
     return YES;
+    
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
