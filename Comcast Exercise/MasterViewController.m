@@ -29,7 +29,7 @@
     // Do any additional setup after loading the view, typically from a nib.
 
     self.detailViewController = (DetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
-    
+    [self.navigationItem setTitle:MasterViewNavItemTitle];
     if (self.parser == nil) {
         NSLog(@"Setting up parser");
         self.parser = [[SNJSONParser alloc]init];
@@ -55,9 +55,8 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        NSDate *object = self.objects[indexPath.row];
         DetailViewController *controller = (DetailViewController *)[[segue destinationViewController] topViewController];
-        [controller setDetailItem:object];
+        [controller setVideo:self.videoGalleries[indexPath.section].videos[indexPath.row]];
         controller.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
         controller.navigationItem.leftItemsSupplementBackButton = YES;
     }

@@ -28,23 +28,27 @@
 }
 
 - (void)getJSONDataFromURL:(NSURL*)url {
-  //  [self getTestData];
+    [self getTestData];
     NSLog(@"preparing to get data");
-    [[[NSURLSession sharedSession] dataTaskWithURL:url completionHandler:^(NSData *data,
+  /*  [[[NSURLSession sharedSession] dataTaskWithURL:url completionHandler:^(NSData *data,
                                                                           NSURLResponse *response,
                                                                           NSError *error){
-        NSLog(@"received data");
-        NSError *jsonReadError;
-        NSDictionary * jsonDict = [NSJSONSerialization JSONObjectWithData:data options:0 error:&jsonReadError];
-        
-        if (jsonReadError == nil) {
-            NSLog(@"read successful");
-            [self extractVideoGalleriesFromDictionary:jsonDict];
-           // [self.delegate didReceiveJSONDictionary:jsonDict];
+        if (error == nil) {
+            NSLog(@"received data");
+            NSError *jsonReadError;
+            NSDictionary * jsonDict = [NSJSONSerialization JSONObjectWithData:data options:0 error:&jsonReadError];
+            
+            if (jsonReadError == nil) {
+                NSLog(@"read successful");
+                [self extractVideoGalleriesFromDictionary:jsonDict];
+               // [self.delegate didReceiveJSONDictionary:jsonDict];
+            }
+        } else {
+            NSLog(@"Error: %@", error.localizedDescription);
         }
         
         
-    }] resume];
+    }] resume]; */
 }
 
 - (void)extractVideoGalleriesFromDictionary:(NSDictionary *)jsonDictionary {
