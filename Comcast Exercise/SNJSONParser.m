@@ -28,9 +28,9 @@
 }
 
 - (void)getJSONDataFromURL:(NSURL*)url {
-    [self getTestData];
+    //[self getTestData];
     NSLog(@"preparing to get data");
-  /*  [[[NSURLSession sharedSession] dataTaskWithURL:url completionHandler:^(NSData *data,
+    [[[NSURLSession sharedSession] dataTaskWithURL:url completionHandler:^(NSData *data,
                                                                           NSURLResponse *response,
                                                                           NSError *error){
         if (error == nil) {
@@ -48,7 +48,7 @@
         }
         
         
-    }] resume]; */
+    }] resume];
 }
 
 - (void)extractVideoGalleriesFromDictionary:(NSDictionary *)jsonDictionary {

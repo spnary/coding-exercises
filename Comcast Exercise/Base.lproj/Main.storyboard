@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -234,26 +235,26 @@
                             <mask key="constraints">
                                 <exclude reference="5pF-DN-HIG"/>
                                 <exclude reference="YLL-Ta-hNo"/>
-                                <exclude reference="XRy-c7-b5G"/>
-                                <exclude reference="jEL-Vv-TiL"/>
-                                <exclude reference="VCi-Fm-hwL"/>
-                                <exclude reference="qKN-2r-Ge0"/>
                                 <exclude reference="7JI-za-Rbd"/>
                                 <exclude reference="FRT-JT-nEE"/>
                                 <exclude reference="Yl8-T5-fEV"/>
-                                <exclude reference="kAM-SE-hdM"/>
-                                <exclude reference="lzZ-AY-jxO"/>
-                                <exclude reference="tuZ-BP-t2V"/>
-                                <exclude reference="aOm-ry-pEY"/>
-                                <exclude reference="gbV-Es-o1X"/>
                                 <exclude reference="73d-1I-UhW"/>
                                 <exclude reference="7dZ-g1-1ip"/>
                                 <exclude reference="Dar-qA-HMW"/>
-                                <exclude reference="KHj-Gp-AoV"/>
-                                <exclude reference="i1X-SN-9fk"/>
+                                <exclude reference="XRy-c7-b5G"/>
+                                <exclude reference="jEL-Vv-TiL"/>
+                                <exclude reference="kAM-SE-hdM"/>
+                                <exclude reference="lzZ-AY-jxO"/>
+                                <exclude reference="tuZ-BP-t2V"/>
+                                <exclude reference="VCi-Fm-hwL"/>
+                                <exclude reference="qKN-2r-Ge0"/>
                                 <exclude reference="UIL-kY-S8R"/>
                                 <exclude reference="k5h-aC-LZH"/>
                                 <exclude reference="oEk-xa-wqe"/>
+                                <exclude reference="aOm-ry-pEY"/>
+                                <exclude reference="gbV-Es-o1X"/>
+                                <exclude reference="KHj-Gp-AoV"/>
+                                <exclude reference="i1X-SN-9fk"/>
                                 <exclude reference="2ud-e4-FS6"/>
                                 <exclude reference="eHz-kb-e7B"/>
                                 <exclude reference="iaV-tx-mVW"/>
@@ -277,26 +278,26 @@
                             <mask key="constraints">
                                 <include reference="5pF-DN-HIG"/>
                                 <include reference="YLL-Ta-hNo"/>
-                                <include reference="XRy-c7-b5G"/>
-                                <include reference="jEL-Vv-TiL"/>
-                                <include reference="VCi-Fm-hwL"/>
-                                <include reference="qKN-2r-Ge0"/>
                                 <include reference="7JI-za-Rbd"/>
                                 <include reference="FRT-JT-nEE"/>
                                 <include reference="Yl8-T5-fEV"/>
-                                <include reference="kAM-SE-hdM"/>
-                                <include reference="lzZ-AY-jxO"/>
-                                <include reference="tuZ-BP-t2V"/>
-                                <include reference="aOm-ry-pEY"/>
-                                <include reference="gbV-Es-o1X"/>
                                 <include reference="73d-1I-UhW"/>
                                 <include reference="7dZ-g1-1ip"/>
                                 <include reference="Dar-qA-HMW"/>
-                                <include reference="KHj-Gp-AoV"/>
-                                <include reference="i1X-SN-9fk"/>
+                                <include reference="XRy-c7-b5G"/>
+                                <include reference="jEL-Vv-TiL"/>
+                                <include reference="kAM-SE-hdM"/>
+                                <include reference="lzZ-AY-jxO"/>
+                                <include reference="tuZ-BP-t2V"/>
+                                <include reference="VCi-Fm-hwL"/>
+                                <include reference="qKN-2r-Ge0"/>
                                 <include reference="UIL-kY-S8R"/>
                                 <include reference="k5h-aC-LZH"/>
                                 <include reference="oEk-xa-wqe"/>
+                                <include reference="aOm-ry-pEY"/>
+                                <include reference="gbV-Es-o1X"/>
+                                <include reference="KHj-Gp-AoV"/>
+                                <include reference="i1X-SN-9fk"/>
                                 <include reference="2ud-e4-FS6"/>
                                 <include reference="eHz-kb-e7B"/>
                                 <include reference="iaV-tx-mVW"/>
