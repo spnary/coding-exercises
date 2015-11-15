@@ -30,6 +30,7 @@
     // Do any additional setup after loading the view, typically from a nib.
 
     self.detailViewController = (DetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
+    self.title = MasterViewNavItemTitle;
     [self.navigationItem setTitle:MasterViewNavItemTitle];
     if (self.activityIndicator == nil ){
         UIActivityIndicatorView *indicator = [[UIActivityIndicatorView alloc]initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
@@ -44,7 +45,7 @@
         self.parser.delegate = self;
         [self.activityIndicator startAnimating];
         [self.parser getJSONDataFromURL:[NSURL URLWithString:ComcastURLString]];
-        [self.parser beautifyTestData];
+       
     }
     
 }
