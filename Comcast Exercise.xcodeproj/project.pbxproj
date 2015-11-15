@@ -10,6 +10,7 @@
 		BA1ECE201BF4182200585022 /* SNVideoEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = BA1ECE1F1BF4182200585022 /* SNVideoEntity.m */; };
 		BA1ECE231BF41B3A00585022 /* SNVideoEntityFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = BA1ECE221BF41B3A00585022 /* SNVideoEntityFactory.m */; };
 		BA1ECE251BF41C6700585022 /* SNVideoEntityFactoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BA1ECE241BF41C6700585022 /* SNVideoEntityFactoryTests.m */; };
+		BA38EC7B1BF803E1000A4230 /* ComcastTestData.json in Resources */ = {isa = PBXBuildFile; fileRef = BA38EC7A1BF803E0000A4230 /* ComcastTestData.json */; };
 		BA6EA4FA1BF5114700FD0668 /* SNConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = BA6EA4F91BF5114700FD0668 /* SNConstants.m */; };
 		BA6EA4FD1BF5673900FD0668 /* SNVideoGallery.m in Sources */ = {isa = PBXBuildFile; fileRef = BA6EA4FC1BF5673900FD0668 /* SNVideoGallery.m */; };
 		BA6EA5001BF568A900FD0668 /* SNVideoGalleryFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = BA6EA4FF1BF568A900FD0668 /* SNVideoGalleryFactory.m */; };
@@ -40,6 +41,7 @@
 		BA1ECE211BF41B3A00585022 /* SNVideoEntityFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNVideoEntityFactory.h; sourceTree = "<group>"; };
 		BA1ECE221BF41B3A00585022 /* SNVideoEntityFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNVideoEntityFactory.m; sourceTree = "<group>"; };
 		BA1ECE241BF41C6700585022 /* SNVideoEntityFactoryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNVideoEntityFactoryTests.m; sourceTree = "<group>"; };
+		BA38EC7A1BF803E0000A4230 /* ComcastTestData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ComcastTestData.json; sourceTree = "<group>"; };
 		BA6EA4F81BF5112600FD0668 /* SNConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNConstants.h; sourceTree = "<group>"; };
 		BA6EA4F91BF5114700FD0668 /* SNConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNConstants.m; sourceTree = "<group>"; };
 		BA6EA4FB1BF5673900FD0668 /* SNVideoGallery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNVideoGallery.h; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 		BA85DB7E1BF3B9920089A1CC /* Test Data */ = {
 			isa = PBXGroup;
 			children = (
+				BA38EC7A1BF803E0000A4230 /* ComcastTestData.json */,
 			);
 			name = "Test Data";
 			sourceTree = "<group>";
@@ -214,6 +217,7 @@
 				TargetAttributes = {
 					BA85DB521BF3B95F0089A1CC = {
 						CreatedOnToolsVersion = 7.1.1;
+						DevelopmentTeam = 53QCC2J8MX;
 					};
 					BA85DB6E1BF3B95F0089A1CC = {
 						CreatedOnToolsVersion = 7.1.1;
@@ -245,6 +249,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA38EC7B1BF803E1000A4230 /* ComcastTestData.json in Resources */,
 				BA85DB691BF3B95F0089A1CC /* LaunchScreen.storyboard in Resources */,
 				BA85DB661BF3B95F0089A1CC /* Assets.xcassets in Resources */,
 				BA85DB641BF3B95F0089A1CC /* Main.storyboard in Resources */,
@@ -403,10 +408,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Comcast Exercise/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.nary.Comcast-Exercise";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -414,10 +422,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Comcast Exercise/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.nary.Comcast-Exercise";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

@@ -16,23 +16,40 @@
     
     SNVideoEntityFactory *factory = [[SNVideoEntityFactory alloc] init];
     SNVideoEntity *videoEntity = [[SNVideoEntity alloc] init];
+    
     if ([videoDictionary objectForKey:EntityNameKey]){
         videoEntity.entityName = [videoDictionary objectForKey:EntityNameKey];
     }
+    
     if ([videoDictionary objectForKey:NetworkNameKey]) {
         videoEntity.networkName = videoDictionary[NetworkNameKey];
     }
+    
     if ([videoDictionary objectForKey:VideoRatingKey]) {
         videoEntity.videoRating = videoDictionary[VideoRatingKey];
     }
+    
     if ([videoDictionary objectForKey:EpisodeNameKey]){
         videoEntity.episodeName = videoDictionary[EpisodeNameKey];
     }
+    
     if ([videoDictionary objectForKey:VideoDescriptionKey]){
         videoEntity.videoDescription = videoDictionary[VideoDescriptionKey];
     }
+    
     if ([videoDictionary objectForKey:VideoAirDateKey]){
         videoEntity.videoAirDate = [factory airDateFromString:videoDictionary[VideoAirDateKey]];
+    }
+    
+    if ([videoDictionary objectForKey:ImageKey]) {
+        NSDictionary *imageDictionary = videoDictionary[ImageKey];
+        if ([imageDictionary objectForKey:ImageAltKey]) {
+            videoEntity.imageAlt = imageDictionary[ImageAltKey];
+        }
+        if ([imageDictionary objectForKey:ImageSrcKey]) {
+            videoEntity.imageURL = [NSURL URLWithString:imageDictionary[ImageSrcKey]];
+        
+        }
     }
     return videoEntity;
 }
@@ -69,7 +86,7 @@
 
     
     NSDate *airDate = [gregorianCal dateFromComponents:dateComps];
-    NSLog(@"Air Date: %@", airDate.description);
+   
     
     return airDate;
 }
@@ -79,13 +96,13 @@
     [gregorianCal setLocale:[NSLocale localeWithLocaleIdentifier:@"en-US"]];
     NSArray<NSString *> *monthSymbols = gregorianCal.shortStandaloneMonthSymbols;
     NSInteger monthInteger = 0;
-    NSLog(@"month symbol: %@", monthSymbols);
-    NSLog(@"month string: %@", monthString);
+  
+  
     if ([monthSymbols containsObject:monthString]) {
-        NSLog(@"month symbols contains month string");
+   
         monthInteger = [monthSymbols indexOfObject:monthString] + 1;
     }
-    NSLog(@"month Integer: %ld", monthInteger);
+  
     return monthInteger;
     
 }

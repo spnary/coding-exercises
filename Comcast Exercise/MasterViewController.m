@@ -20,6 +20,7 @@
 @property NSMutableArray *objects;
 @property (strong, nonatomic) SNJSONParser *parser;
 @property (strong, nonatomic) NSArray<SNVideoGallery*> *videoGalleries;
+@property (weak, nonatomic) UIActivityIndicatorView *activityIndicator;
 @end
 
 @implementation MasterViewController
@@ -30,13 +31,22 @@
 
     self.detailViewController = (DetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
     [self.navigationItem setTitle:MasterViewNavItemTitle];
+    if (self.activityIndicator == nil ){
+        UIActivityIndicatorView *indicator = [[UIActivityIndicatorView alloc]initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+        [indicator setColor:[UIColor blackColor]];
+        [indicator setCenter:self.view.center];
+        [self.view addSubview:indicator];
+        self.activityIndicator = indicator;
+    }
     if (self.parser == nil) {
-        NSLog(@"Setting up parser");
+     
         self.parser = [[SNJSONParser alloc]init];
         self.parser.delegate = self;
-     
+        [self.activityIndicator startAnimating];
         [self.parser getJSONDataFromURL:[NSURL URLWithString:ComcastURLString]];
+        [self.parser beautifyTestData];
     }
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -100,8 +110,12 @@
         [tempVideos addObject:gallery];
     }
     self.videoGalleries = tempVideos;
-    
-    [self.tableView reloadData];
+ 
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.activityIndicator stopAnimating];
+        [self.tableView reloadData];
+    });
 }
+
 
 @end

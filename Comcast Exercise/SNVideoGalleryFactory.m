@@ -23,7 +23,7 @@
     }
     
     if ([galleryDictionary objectForKey:ItemsKey]){
-        //TODO: - Make SNVideoEntities from items
+  
         NSArray *videosArray = galleryDictionary[ItemsKey];
         NSMutableArray<SNVideoEntity*> *tempVideos = [NSMutableArray arrayWithCapacity:50];
         for (NSDictionary *videoDictionary in videosArray) {

@@ -29,22 +29,22 @@
 
 - (void)getJSONDataFromURL:(NSURL*)url {
     //[self getTestData];
-    NSLog(@"preparing to get data");
+
     [[[NSURLSession sharedSession] dataTaskWithURL:url completionHandler:^(NSData *data,
                                                                           NSURLResponse *response,
                                                                           NSError *error){
         if (error == nil) {
-            NSLog(@"received data");
+   
             NSError *jsonReadError;
             NSDictionary * jsonDict = [NSJSONSerialization JSONObjectWithData:data options:0 error:&jsonReadError];
             
             if (jsonReadError == nil) {
-                NSLog(@"read successful");
+     
                 [self extractVideoGalleriesFromDictionary:jsonDict];
                // [self.delegate didReceiveJSONDictionary:jsonDict];
             }
         } else {
-            NSLog(@"Error: %@", error.localizedDescription);
+      
         }
         
         
@@ -54,18 +54,18 @@
 - (void)extractVideoGalleriesFromDictionary:(NSDictionary *)jsonDictionary {
     if (jsonDictionary[VideoGalleriesKey]){
         NSArray * videoGalleries = jsonDictionary[VideoGalleriesKey];
-        NSLog(@"passing video galleries back to delegate");
+      
         [self.delegate didReceiveVideoGalleries:videoGalleries];
     }
 }
 
 -(void)getTestData {
-    NSLog(@"getting test data");
+ 
     NSData *jsonData = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"ComcastTestData" ofType:@"json"] ];
     NSError *readErr;
     NSDictionary *jsonDict = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:&readErr];
     if (readErr == nil) {
-        NSLog(@"no errors reading test data");
+   
         [self extractVideoGalleriesFromDictionary:jsonDict];
     }
 }

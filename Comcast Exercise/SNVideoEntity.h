@@ -17,6 +17,7 @@
 @property (strong, nonatomic) NSDate *videoAirDate;
 @property (strong, nonatomic) NSString *episodeName;
 @property (strong, nonatomic) NSURL *imageURL;
+@property (strong, nonatomic) NSString *imageAlt;
 @property (strong, nonatomic) NSString *videoRating;
 @property NSInteger episodeSeason;
 @property NSInteger episodeNumber;

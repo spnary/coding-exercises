@@ -15,6 +15,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *episodeNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *airDateLabel;
 @property (weak, nonatomic) IBOutlet UITextView *descriptionTextView;
+@property (weak, nonatomic) IBOutlet UIImageView *videoImageView;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *imageLoadingIndicator;
 
 @end
 
@@ -49,8 +51,34 @@
         [dateFormatter setTimeStyle:NSDateFormatterShortStyle];
         
         NSString *dateString = [dateFormatter stringFromDate:self.video.videoAirDate];
-        NSLog(@"date String: %@", dateString);
+    
         [self.airDateLabel setText:dateString];
+        if (self.video.imageURL) {
+            //TODO - animate loading indicator
+            self.imageLoadingIndicator.hidden = NO;
+            [self.imageLoadingIndicator startAnimating];
+            [[[NSURLSession sharedSession] dataTaskWithURL:self.video.imageURL
+                                         completionHandler:^(NSData *data,
+                                                             NSURLResponse *response,
+                                                             NSError *error){
+                                             if (error == nil) {
+                                                 UIImage *videoImage = [UIImage imageWithData:data];
+                                                 
+                                                 dispatch_async(dispatch_get_main_queue(), ^{
+                                                     self.videoImageView.image = videoImage;
+                                                 });
+                                             } else {
+                                                 
+                                             }
+                                             dispatch_async(dispatch_get_main_queue(), ^{
+                                                 [self.imageLoadingIndicator stopAnimating];
+                                                 self.imageLoadingIndicator.hidden = YES;
+                                             });
+                                             
+                                             
+                }] resume];
+            
+        }
         
     }
 }
@@ -58,6 +86,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    [self configureView];
+}
+
+-(void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
     [self configureView];
 }
 
