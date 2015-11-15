@@ -12,7 +12,8 @@
 @implementation SNJSONParser
 
 - (void)beautifyTestData {
-    
+    // test method to convert json data to a more human friendly format
+    // reads ComcastTestData and then writes it to a dictionary using NSJSONWritingPrettyPrinted option
     NSData *jsonData = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"ComcastTestData" ofType:@"json"] ];
     NSError *readErr;
     NSDictionary *jsonDict = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:&readErr];
@@ -28,6 +29,7 @@
 }
 
 - (void)getJSONDataFromURL:(NSURL*)url {
+    // uncomment the following line to test from local file when no internet connection available
     //[self getTestData];
 
     [[[NSURLSession sharedSession] dataTaskWithURL:url completionHandler:^(NSData *data,
@@ -41,7 +43,7 @@
             if (jsonReadError == nil) {
      
                 [self extractVideoGalleriesFromDictionary:jsonDict];
-               // [self.delegate didReceiveJSONDictionary:jsonDict];
+             
             }
         } else {
       
@@ -52,6 +54,7 @@
 }
 
 - (void)extractVideoGalleriesFromDictionary:(NSDictionary *)jsonDictionary {
+    // get the video galleries from the retrieved data
     if (jsonDictionary[VideoGalleriesKey]){
         NSArray * videoGalleries = jsonDictionary[VideoGalleriesKey];
       
@@ -60,7 +63,8 @@
 }
 
 -(void)getTestData {
- 
+    // test method for getting json data from a local file
+    // useful for doing development work when no internet connection is available
     NSData *jsonData = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"ComcastTestData" ofType:@"json"] ];
     NSError *readErr;
     NSDictionary *jsonDict = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:&readErr];

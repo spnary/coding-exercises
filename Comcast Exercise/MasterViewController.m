@@ -17,10 +17,11 @@
 
 @interface MasterViewController ()
 
-@property NSMutableArray *objects;
+
 @property (strong, nonatomic) SNJSONParser *parser;
 @property (strong, nonatomic) NSArray<SNVideoGallery*> *videoGalleries;
 @property (weak, nonatomic) UIActivityIndicatorView *activityIndicator;
+
 @end
 
 @implementation MasterViewController
@@ -32,6 +33,8 @@
     self.detailViewController = (DetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
     self.title = MasterViewNavItemTitle;
     [self.navigationItem setTitle:MasterViewNavItemTitle];
+    
+    // create and place an activity indicator for the master view
     if (self.activityIndicator == nil ){
         UIActivityIndicatorView *indicator = [[UIActivityIndicatorView alloc]initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
         [indicator setColor:[UIColor blackColor]];
@@ -39,6 +42,8 @@
         [self.view addSubview:indicator];
         self.activityIndicator = indicator;
     }
+    
+    // initialize the json parser and load data
     if (self.parser == nil) {
      
         self.parser = [[SNJSONParser alloc]init];
@@ -67,7 +72,10 @@
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         DetailViewController *controller = (DetailViewController *)[[segue destinationViewController] topViewController];
+        
+        // pass the appropriate SNVideoEntity to the detail view controller
         [controller setVideo:self.videoGalleries[indexPath.section].videos[indexPath.row]];
+        
         controller.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
         controller.navigationItem.leftItemsSupplementBackButton = YES;
     }
@@ -106,12 +114,15 @@
 - (void)didReceiveVideoGalleries:(NSArray *)galleriesArray {
     NSDictionary *galleryDictionary;
     NSMutableArray<SNVideoGallery*> *tempVideos = [NSMutableArray arrayWithCapacity:50];
+    
+    // create an array of SNVideoGallery objects and store them in the videoGalleries property
     for (galleryDictionary in galleriesArray) {
         SNVideoGallery *gallery = [SNVideoGalleryFactory videoGalleryFromDictionary:galleryDictionary];
         [tempVideos addObject:gallery];
     }
     self.videoGalleries = tempVideos;
  
+    // UI updates must be run on the main thread
     dispatch_async(dispatch_get_main_queue(), ^{
         [self.activityIndicator stopAnimating];
         [self.tableView reloadData];

@@ -22,22 +22,10 @@
 
 @implementation DetailViewController
 
-#pragma mark - Managing the detail item
-
-- (void)setDetailItem:(id)newDetailItem {
- /*   if (_detailItem != newDetailItem) {
-        _detailItem = newDetailItem;
-            
-        // Update the view.
-        [self configureView];
-    }*/
-}
 
 - (void)configureView {
-    // Update the user interface for the detail item.
-/*    if (self.detailItem) {
-        self.detailDescriptionLabel.text = [self.detailItem description];
-    }*/
+    
+    // Load detail data from the video entity
     if (self.video) {
         [self.navigationItem setTitle:self.video.entityName];
         [self.networkLabel setText:self.video.networkName];
@@ -45,6 +33,7 @@
         [self.episodeNameLabel setText:self.video.episodeName];
         [self.descriptionTextView setText:self.video.videoDescription];
         
+        // display the air date in the local time and date format
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
         [dateFormatter setLocale:[NSLocale currentLocale]];
         [dateFormatter setDateStyle:NSDateFormatterMediumStyle];
@@ -53,23 +42,26 @@
         NSString *dateString = [dateFormatter stringFromDate:self.video.videoAirDate];
     
         [self.airDateLabel setText:dateString];
+        
+        // load the image from the image URL
         if (self.video.imageURL) {
-            //TODO - animate loading indicator
+            
             self.imageLoadingIndicator.hidden = NO;
             [self.imageLoadingIndicator startAnimating];
             [[[NSURLSession sharedSession] dataTaskWithURL:self.video.imageURL
                                          completionHandler:^(NSData *data,
                                                              NSURLResponse *response,
                                                              NSError *error){
+                                             
                                              if (error == nil) {
                                                  UIImage *videoImage = [UIImage imageWithData:data];
                                                  
+                                                 // UI Updates must be called on main thread
                                                  dispatch_async(dispatch_get_main_queue(), ^{
                                                      self.videoImageView.image = videoImage;
                                                  });
-                                             } else {
-                                                 
                                              }
+                                             // UI Updates must be called on main thread
                                              dispatch_async(dispatch_get_main_queue(), ^{
                                                  [self.imageLoadingIndicator stopAnimating];
                                                  self.imageLoadingIndicator.hidden = YES;

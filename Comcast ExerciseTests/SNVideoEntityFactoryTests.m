@@ -38,10 +38,9 @@
     self.controlEntity.videoAirDate = [[NSCalendar currentCalendar]dateFromComponents:airDateComponents];//@"Mon, 21 Sep 2015 00:00:00 GMT";
     self.controlEntity.episodeName = @"The Blind Auditions Premiere";
     self.controlEntity.imageURL = [NSURL URLWithString:@"http://static-p-a.comcast.net/api/assets/cimed-20130131/transparent.png"];
+    self.controlEntity.imageAlt = @"The Voice";
     self.controlEntity.videoRating = @"tv-pg";
-    self.controlEntity.episodeSeason = 9;
-    self.controlEntity.episodeNumber = 1;
-    self.controlEntity.videoDuration = 5133;
+    
     
     self.testDictionary = @{@"entityType" : @"TvSeries",
                             @"videoNetworkDisplayName" : @"NBC",
@@ -49,7 +48,8 @@
                             @"episodeOriginalAirDate" : @"Mon, 21 Sep 2015 00:00:00 GMT",
                             @"entityName" : @"The Voice",
                             @"videoName" : @"The Blind Auditions Premiere",
-                            @"imageURL" : @"http:\/\/static-p-a.comcast.net\/api\/assets\/cimed-20130131\/transparent.png",
+                            @"image" : @{ @"alt":@"The Voice",
+                                           @"src":@"http:\/\/static-p-a.comcast.net\/api\/assets\/cimed-20130131\/transparent.png"},
                             @"videoRating" : @"tv-pg",
                             @"videoDuration" : @"5133",
                             @"episodeSeasonNumber" : @"9",
@@ -72,10 +72,9 @@
     XCTAssertEqualObjects(testEntity.videoAirDate ,self.controlEntity.videoAirDate, @"video air dates must be equal");
     XCTAssertEqualObjects(testEntity.episodeName, self.controlEntity.episodeName, @"episode names must be equal");
     XCTAssertEqualObjects(testEntity.imageURL, self.controlEntity.imageURL, @"image URLs must be equal");
+    XCTAssertEqualObjects(testEntity.imageAlt, self.controlEntity.imageAlt, @"image alts must be equal");
     XCTAssertEqualObjects(testEntity.videoRating, self.controlEntity.videoRating, @"video ratings must be equal");
-    XCTAssertEqual(testEntity.episodeSeason, self.controlEntity.episodeSeason, @"episode seasons must be equal");
-    XCTAssertEqual(testEntity.episodeNumber, self.controlEntity.episodeNumber, @"episode numbers must be equal");
-    XCTAssertEqual(testEntity.videoDuration, self.controlEntity.videoDuration, @"video durations must be equal");
+
 }
 
 @end

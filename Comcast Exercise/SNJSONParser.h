@@ -10,6 +10,7 @@
 
 @protocol SNJSONParserDelegate <NSObject>
 
+// method called after json data is received
 -(void)didReceiveVideoGalleries:(NSArray *)galleriesArray;
 
 @end
@@ -18,9 +19,10 @@
 
 @property (weak, nonatomic) id <SNJSONParserDelegate> delegate;
 
-
+// test method to output the test data in a more human-friendly format
 - (void)beautifyTestData;
 
+// retrieve json data from the given url
 - (void)getJSONDataFromURL:(NSURL *)url;
 
 @end

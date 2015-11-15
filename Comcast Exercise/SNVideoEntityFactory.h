@@ -12,6 +12,7 @@
 
 @interface SNVideoEntityFactory : NSObject
 
+// Method to build an instance of SNVideoEntity from a dictionary 
 + (SNVideoEntity *)videoEntityFromDictionary:(NSDictionary *)videoDictionary;
 
 @end

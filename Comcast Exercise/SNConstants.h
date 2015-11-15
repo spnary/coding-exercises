@@ -32,19 +32,3 @@ extern NSString *const VideoGalleriesKey;
 
 extern NSString *const ComcastURLString;
 extern NSString *const MasterViewNavItemTitle;
-
-
-
-/*
- @property (strong, nonatomic) NSString *entityType;
- @property (strong, nonatomic) NSString *entityName;
- @property (strong, nonatomic) NSString *networkName;
- @property (strong, nonatomic) NSString *videoDescription;
- @property (strong, nonatomic) NSDate *videoAirDate;
- @property (strong, nonatomic) NSString *episodeName;
- @property (strong, nonatomic) NSURL *imageURL;
- @property (strong, nonatomic) NSString *videoRating;
- @property NSInteger episodeSeason;
- @property NSInteger episodeNumber;
- @property NSTimeInterval videoDuration;
-*/

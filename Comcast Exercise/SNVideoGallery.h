@@ -12,7 +12,7 @@
 
 @interface SNVideoGallery : NSObject
 
-@property (strong, nonatomic) NSArray<SNVideoEntity *> *videos;
-@property (strong, nonatomic) NSString *name;
+@property (strong, nonatomic) NSArray<SNVideoEntity *> *videos; // Array of videos
+@property (strong, nonatomic) NSString *name; // name of entity, usually the night the shows aired (e.g. Mon Night TV)
 
 @end

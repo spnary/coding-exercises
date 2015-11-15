@@ -12,10 +12,8 @@
 
 @interface DetailViewController : UIViewController
 
-//@property (strong, nonatomic) id detailItem;
-//@property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
 
-@property (weak, nonatomic) SNVideoEntity *video;
+@property (weak, nonatomic) SNVideoEntity *video; // reference to the SNVideoEntity object used to populate the detail view
 
 
 @end

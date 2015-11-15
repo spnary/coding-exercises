@@ -12,6 +12,7 @@
 
 @interface SNVideoGalleryFactory : NSObject
 
+// Method to create an instance of SNVideoGallery from a dictionary
 + (SNVideoGallery *)videoGalleryFromDictionary:(NSDictionary *)galleryDictionary;
 
 @end
